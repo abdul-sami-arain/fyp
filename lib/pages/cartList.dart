@@ -21,6 +21,7 @@ import 'package:intl/intl.dart';
 
 import '../guest/deleivery.dart';
 import '../nonguest/change.dart';
+import '../nonguest/deleivery.dart';
 import '../provider/provider1.dart';
 import '../utils/multi2.dart';
 import '../utils/multi3.dart';
@@ -143,7 +144,7 @@ class _CartListState extends State<CartList> {
                                                   pageBuilder: (context,
                                                           animation,
                                                           secondaryAnimation) =>
-                                                           Provider11.name==null?Delievery():NPaymentEdit()
+                                                           Provider11.name==null?Delievery():NDelievery()
                                                       )
                                                       );
                                   },

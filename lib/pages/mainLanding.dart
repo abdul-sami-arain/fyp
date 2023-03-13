@@ -5,6 +5,8 @@ import 'package:fypapp/pages/profile.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:line_icons/line_icons.dart';
 
+import '../history.dart';
+
 
 
 class Example extends StatefulWidget {
@@ -19,17 +21,14 @@ class _ExampleState extends State<Example> {
   static const List<Widget> _widgetOptions = <Widget>[
     LandingPage(),
    Favourities(),
-    Text(
-      'Search',
-      style: optionStyle,
-    ),
+    History(),
     Profile()
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -69,8 +68,8 @@ class _ExampleState extends State<Example> {
                   iconColor: Colors.white,
                 ),
                 GButton(
-                  icon: LineIcons.search,
-                  text: 'Search',
+                  icon: LineIcons.history,
+                  text: 'History',
                   iconColor: Colors.white,
                 ),
                 GButton(

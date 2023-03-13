@@ -592,7 +592,8 @@ class _DisplayProduct3State extends State<DisplayProduct3> {
                         ),
                         onPressed: () async {
                           Provider11.items_in_cart!.add(CartItems(1, widget.imgAddress.toString(), widget.title.toString(), widget.size.toString(), int.parse(widget.price.toString()), count, int.parse(widget.price.toString())));
-                          await Future.delayed(Duration(seconds: 2));
+                          // await Future.delayed(Duration(seconds: 2));
+                          Provider11.increamentCart();
                                Navigator.push(
                 context,
                 PageRouteBuilder(

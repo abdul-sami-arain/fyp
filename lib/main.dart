@@ -1,12 +1,13 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:fypapp/pages/features/onBoardingFeature/presentation/onBoarding.dart';
 import 'package:fypapp/pages/splash.dart';
 import 'package:fypapp/provider/provider1.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import 'guest/addressLoc.dart';
+import 'nonguest/addressLoc.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
                 theme: ThemeData(
                   primarySwatch: Colors.blue,
                 ),
-                home: LocAddress()),
+                home: SplashScreen()),
           );
         });
   }

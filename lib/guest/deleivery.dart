@@ -18,6 +18,8 @@ import 'package:provider/provider.dart';
 import 'package:glass/glass.dart';
 import 'package:intl/intl.dart';
 
+import '../pages/cartList.dart';
+import '../provider/provider1.dart';
 import '../utils/multiText.dart';
 import '../utils/udelinedMulti.dart';
 
@@ -27,6 +29,7 @@ class Delievery extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Provider11 = Provider.of<Provider1>(context);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
@@ -133,7 +136,7 @@ class Delievery extends StatelessWidget {
                             size: 12),
                         Multi(
                             color: Colors.white,
-                            subtitle: "MON MARCH 13 2023",
+                            subtitle: "MON MARCH 15 2023",
                             weight: FontWeight.bold,
                             size: 21),
                         Multi(
@@ -160,14 +163,24 @@ class Delievery extends StatelessWidget {
                   children: [
                     Multi(
                         color: Colors.white,
-                        subtitle: "12 Products",
+                        subtitle: "${Provider11.items_in_cart!.length} Product(s)",
                         weight: FontWeight.bold,
                         size: 12),
-                    UndeLinedMulti(
-                        color: Colors.red,
-                        subtitle: "view all",
-                        weight: FontWeight.bold,
-                        size: 12)
+                    GestureDetector(
+                      onTap: ()async{
+                         await Navigator.push(
+                              context,
+                              PageRouteBuilder(
+                                  pageBuilder: (context, animation,
+                                          secondaryAnimation) =>
+                                      CartList()));
+                      },
+                      child: UndeLinedMulti(
+                          color: Colors.red,
+                          subtitle: "view all",
+                          weight: FontWeight.bold,
+                          size: 12),
+                    )
                   ],
                 ),
                 SizedBox(
@@ -190,7 +203,7 @@ class Delievery extends StatelessWidget {
                         size: 12),
                     UndeLinedMulti(
                         color: Colors.grey,
-                        subtitle: "1100",
+                        subtitle: "${Provider11.priceSum}",
                         weight: FontWeight.bold,
                         size: 12)
                   ],
@@ -226,7 +239,7 @@ class Delievery extends StatelessWidget {
                         size: 12),
                     UndeLinedMulti(
                         color: Colors.white,
-                        subtitle: "RS 1200",
+                        subtitle: "${Provider11.priceSum+100}",
                         weight: FontWeight.bold,
                         size: 16)
                   ],

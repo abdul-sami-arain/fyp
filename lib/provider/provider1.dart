@@ -18,6 +18,8 @@ class Provider1 extends ChangeNotifier {
 String? address;
 String? number;
 String? method;
+double? lat;
+double? lon;
 
  List<CartItems>? items_in_cart = []; 
    double? total;

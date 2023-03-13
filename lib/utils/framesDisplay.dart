@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:fypapp/pages/display2.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../pages/display.dart';
@@ -156,10 +157,21 @@ class ProductDisplay2 extends StatelessWidget {
                                     ),
                                   child: Text( 'Add',style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.bold),),
                                   onPressed: () {
-                                    Navigator.pushReplacement(context,
+                                    Navigator.push(context,
                                       MaterialPageRoute(builder:
                                         (context) => 
-                                        DisplayProduct()
+                                        DisplayProduct3(
+                                          id: 1, 
+                                          imgAddress: imgAddress, 
+                                          title: title, 
+                                          price: price, 
+                                          stock: "stock", 
+                                          tax: "tax", 
+                                          colors: "many", 
+                                          count: count, 
+                                          gender: "Male", 
+                                          shape: "many", 
+                                          size: "medium , small")
                                         )
                                       );
                                   },
